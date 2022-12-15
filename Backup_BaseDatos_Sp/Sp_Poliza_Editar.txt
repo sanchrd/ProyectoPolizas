@@ -1,0 +1,45 @@
+USE [Bd_Polizas]
+GO
+
+/****** Object:  StoredProcedure [dbo].[Sp_Poliza_Editar]    Script Date: 2/12/2022 10:49:30 a. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Ruben Sanchez
+-- Create date: 30/11/2022
+-- Description:	Sp_Poliza_Editar
+-- =============================================
+CREATE PROCEDURE [dbo].[Sp_Poliza_Editar] 
+    
+	@IdPoliza int,
+	@Placa varchar(6),
+	@IdCiudad int,
+	@Nombre_Tomador varchar(60)
+
+	--@Fecha_Inicio date,
+	--@Fecha_Fin date,
+	--@Fecha_Vencimiento date
+	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+    Update Poliza Set
+	   
+	   
+	   Placa             = @Placa,
+	   IdCiudad          = @IdCiudad,
+	   Nombre_Tomador    = @Nombre_Tomador
+	   --Fecha_Inicio      = @Fecha_Inicio,
+	   --Fecha_Fin         = @Fecha_Fin,
+	   --Fecha_Vencimiento = @Fecha_Vencimiento
+	   
+	Where IdPoliza = @IdPoliza
+END
+GO
+

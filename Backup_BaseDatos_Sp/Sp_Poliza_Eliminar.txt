@@ -1,0 +1,29 @@
+USE [Bd_Polizas]
+GO
+
+/****** Object:  StoredProcedure [dbo].[Sp_Poliza_Eliminar]    Script Date: 2/12/2022 10:57:03 a. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Ruben Sanchez
+-- Create date: 30/11/2022
+-- Description:	Sp_Poliza_Eliminar
+-- =============================================
+CREATE PROCEDURE [dbo].[Sp_Poliza_Eliminar] 
+    @Placa Varchar(6)
+	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+    Delete From Poliza 
+	Where Placa = @Placa
+END
+GO
+
+

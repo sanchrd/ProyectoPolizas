@@ -1,0 +1,32 @@
+USE [Bd_Polizas]
+GO
+
+/****** Object:  StoredProcedure [dbo].[Sp_Poliza_Guardar]    Script Date: 2/12/2022 10:58:39 a. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Ruben Sanchez
+-- Create date: 30/11/2022
+-- Description:	Sp_Poliza_Guardar
+-- =============================================
+CREATE PROCEDURE [dbo].[Sp_Poliza_Guardar]
+
+    @Placa             varchar(6),
+	@IdCiudad          int,
+	@Nombre_Tomador    varchar(60),
+	@Fecha_Inicio      date,
+	@Fecha_Fin         date,
+	@Fecha_Vencimiento date
+	
+AS
+BEGIN
+    Insert Into Poliza(Placa,IdCiudad,Nombre_Tomador,Fecha_Inicio,Fecha_Fin,Fecha_Vencimiento)
+	Values (@Placa,@IdCiudad,@Nombre_Tomador,@Fecha_Inicio,@Fecha_Fin,@Fecha_Vencimiento)
+END
+GO
+
+

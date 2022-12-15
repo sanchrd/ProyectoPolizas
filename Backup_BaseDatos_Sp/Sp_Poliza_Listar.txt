@@ -1,0 +1,33 @@
+USE [Bd_Polizas]
+GO
+
+/****** Object:  StoredProcedure [dbo].[Sp_Poliza_Listar]    Script Date: 2/12/2022 10:59:28 a. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Ruben Sanchez
+-- Create date: 30/11/2022
+-- Description:	Sp_Poliza_Listar
+-- =============================================
+CREATE PROCEDURE [dbo].[Sp_Poliza_Listar]
+
+AS
+BEGIN
+	Select
+	   IdPoliza,
+	   Placa,
+	   IdCiudad,
+	   Nombre_Tomador,
+	   Fecha_Inicio,
+	   Fecha_Fin,
+	   Fecha_Vencimiento
+    From Poliza
+	Order by IdCiudad
+END
+GO
+
+
